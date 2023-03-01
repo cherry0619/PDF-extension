@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="./style/css-style.css">
+<body>
+  <nav>
+    <ul>
+      <li><a class="active" href="#merger" id="merger-link"> PDF Merger</a></li>
+      <li><a class ="non-active" href="#extractor" id="extractor-link">PDF Extractor</a></li>
+      <li><a class ="non-active" href="#word" id="word-link">PDF to Word</a></li>
+      <li><a class ="non-active" href="#contact" id="contact">Contact me</a></li>
+    </ul>
+  </nav>
+  <div id="merger">
+    <h2>merger</h2>
+    <p>Merge multiple pfds into a single one!</p>
+
+      <!-- pdf container -->
+  <div class ="pdf-container">
+    <div class="dropBox" id="dropBox">
+      <p>Drag and drop files here to upload</p>
+      <div>
+        <input type="file" id="fileInput">
+        <button id ="sumbit-file" style="display: block;margin: 6%;" onclick="">Upload</button>  
+      </div>
+      
+      <a id ="merger-note"><br>Uploaded file name will be listed below.<br>Merged result will be shown on the right</a>
+      <!-- show the updated files  -->
+      <div id ="uploaded-files-lists">
+        <!-- below we will use js to generate the li elements -->
+      </div>
+
+      <div id ="merger-button-container">
+        <!-- here we need to add a button to send the merge request -->
+        <button class="button" id ="pdf-merge_button">Merge</button>
+        <button class="button" id ="refresh_button" onclick="location.reload()">Refresh</button>
+      </div>
+      
+    </div>
+   
+    <!-- preview the uploaded file -->
+    <div id="preview-container">
+      <p>Choosed files and merged file will be displayed here !</p>
+      <embed src="" type="application/pdf"  id="pdf-preview">
+    </div>
+  </div>
+
+
+  </div>
+  
+  <div id="extractor">
+    <h2>Extract text from pdf</h2>
+    <p>Using OCR techniques to extract text from pdf file</p>
+    <!-- upload area -->
+    <div id="ExtracUploadedArea">
+      <!-- drag and drop area to uoload file -->
+      <div class="custom-file-input">
+        <div id="extractorForm">
+          <input type="file" id="extractorFileInput" >
+          <button id ="extractFileSubmit"  onclick="">Upload File</button>  
+        </div>
+      </div>
+      <!-- Extractor button -->
+      <button id="extractorButton" class="button">Extract</button>
+    </div>
+    <!-- pdf preview and result, displayed side by side -->
+    <div id="extractorDisplayArea">
+       <!-- pdf-review -->
+       <div id="pdf-result-container">
+        <p>Uploaded file will be displayed here!!</p>
+        <div id ="extractorPdfPreviewContainer">
+          <embed src="" id="extractorPdfPreview" type="application/pdf">
+        </div>
+        <div id ="extractorResult">
+        </div>
+       </div>
+
+       <!-- table erea -->
+       <div id="extractor-result">
+          <!-- FICO score summary -->
+          <div>
+            <table>
+              <caption>FICO Score Summary</caption>
+              <thead>
+                <tr>
+                  <th>EquiFAX</th>
+                  <th>Experian</th>
+                  <th>TransUnion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--</td>
+                  <td>--</td>
+                  <td>--</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Bureau Summary -->
+          <table>
+            <caption>Bureau Summary</caption>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>value</th>
+                <th>Item</th>
+                <th>value</th>
+                <th>Item</th>
+                <th>value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Public Records</td>
+                <td>--</td>
+                <td>Past Due Amt</td>
+                <td>--</td>
+                <td>Inquiries</td>
+                <td>--</td>
+              </tr>
+            </tbody>
+          </table>
+       </div>
+    </div>
+
+  </div> 
+
+  <div id="word">
+    <h2>PDF to Word</h2>
+    <p>Transform pdf to word.</p>
+  </div>
+
+  <div id="contactMe">
+    <h2>contact me</h2>
+    <p>contact me.</p>
+  </div>
+
+
+  <script src="./pageScript/navigator-click.js"></script>
+  <script src="./pageScript/dragDrop.js"></script>
+  <script src ="./pageScript/pdfMerge.js"></script>
+  <link rel="stylesheet" href="./style/css-style.css">
+
+</body>
+</html>

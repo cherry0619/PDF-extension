@@ -1,0 +1,229 @@
+/* navigation bar */
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  nav >ul> li {
+    float: left;
+  }
+  
+  nav> ul> li:last-child {
+    float: right;
+  }
+
+  nav>ul>li >a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  /* Change the link color to #111 (black) on hover */
+  nav>ul>li>a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+
+
+#extractor, #word,#contactMe {
+    display: none;
+  }
+
+/* The end of navigation part!! */
+
+
+/* PDF drop and preview part!! */
+#pdf-container {
+  display: flex;
+}
+
+
+#merger-note{
+  font-size: 14px;
+  color: black;
+  background-color: yellow;
+
+}
+
+
+.dropBox {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  width: 20%;
+  height: 450px;
+  padding: 25px;
+  text-align: center;
+  font-size: 20px;
+  margin: 25px;
+  float: left;
+}
+
+
+  #drop-area.highlight {
+    background-color: #f7f7f7;
+  }
+
+
+  #uploaded-files-lists {
+    border: dotted 1px;
+    background-color: white;
+    text-decoration: underline solid;
+    color: blue;
+    list-style-type: disc;
+    margin-top: 10px;
+    float: left;
+    text-align: left;
+    width: 95%;
+    font-size:16px;
+  }
+
+  #preview-container{
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    width: 70%;
+    height: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 25px;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+
+  #pdf-preview[src]:not([src=""]) {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: none;
+  }
+  
+
+  .button {
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 10px;
+    cursor: pointer;
+    background-color: #04AA6D;
+    width: fit-content;
+  }
+
+
+#ExtracUploadedArea{
+  display: flex;
+
+}
+
+
+
+  .custom-file-input {
+    background-color: #04aaaa;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding: .375rem .75rem;
+    height: 50px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+#extractorDisplayArea{
+  display: flex;
+}
+
+
+  #pdf-result-container{
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    width: 50%;
+    height: 500px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 25px;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+
+  #extractorPdfPreview[src]:not([src=""]) {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: none;
+  }
+  
+#extractor-result{
+  float: right;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+
+table {
+    border-collapse: collapse; /* Merge borders where possible */
+    width: 100%; /* Make table occupy full width */
+    margin-bottom: 20px; /* Add some space between tables */
+  }
+  
+  th {
+    background-color: #04aaaa; /* Set background color of header cells */
+    font-weight: bold; /* Make text bold in header cells */
+  }
+  
+  th, td {
+    padding: 15px; /* Add some padding inside cells */
+    text-align: left; /* Align text to left */
+    border: 1px solid #ddd; /* Add a border around cells */
+    /* width: 80px; */
+    /* height: 20px; */
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5; /* Set background color when row is hovered */
+  }
+  
+
+  caption {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+    color: #333;
+  }
