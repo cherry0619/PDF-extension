@@ -78,7 +78,7 @@
        <div id="extractor-result">
           <!-- FICO score summary -->
           <div>
-            <table>
+            <table id ="FICO-SCORE-SUMMARY">
               <caption>FICO Score Summary</caption>
               <thead>
                 <tr>
@@ -97,10 +97,12 @@
             </table>
           </div>
           <!-- Bureau Summary -->
-          <table>
+          <table id="BUREAU-SUMMARY">
             <caption>Bureau Summary</caption>
             <thead>
               <tr>
+                <th>Item</th>
+                <th>value</th>
                 <th>Item</th>
                 <th>value</th>
                 <th>Item</th>
@@ -111,11 +113,13 @@
             </thead>
             <tbody>
               <tr>
-                <td>Public Records</td>
                 <td>--</td>
-                <td>Past Due Amt</td>
                 <td>--</td>
-                <td>Inquiries</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
                 <td>--</td>
               </tr>
             </tbody>
@@ -137,8 +141,9 @@
 
 
   <script src="./pageScript/navigator-click.js"></script>
-  <script src="./pageScript/dragDrop.js"></script>
+  <script src="./pageScript/uploadFile.js"></script>
   <script src ="./pageScript/pdfMerge.js"></script>
+  <script src ="./pageScript/pdfExtractor.js"></script>
   <link rel="stylesheet" href="./style/css-style.css">
 
 </body>

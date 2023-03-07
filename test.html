@@ -4,18 +4,38 @@
   <title>Drag and Drop File Upload</title>
 </head>
 <body>
-  <style>
-      .container {
-    border: dotted black 1px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px; /* set a height for the container to center vertically */
-}
-  </style>
-  <div class="container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae justo sit amet metus molestie pellentesque. Ut commodo eros vitae odio dapibus, ut ullamcorper ex lacinia. </p>
+   <!-- FICO score summary -->
+   <div>
+    <table id ="FICO-SCORE-SUMMARY">
+      <caption>FICO Score Summary</caption>
+      <thead>
+        <tr>
+          <th>EquiFAX</th>
+          <th>Experian</th>
+          <th>TransUnion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>--</td>
+          <td>--</td>
+          <td>--</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
+<script >
+  const tbFICO= document.getElementById('FICO-SCORE-SUMMARY');
+  for (let i = 0; i < tbFICO.rows.length; i++) {
+
+      // Iterate over the cells of the row
+      for (let j = 0; j < tbFICO.rows[i].cells.length; j++) {
+    
+        // Get the current cell element
+        const cell = tbFICO.rows[i].cells[j];
+        cell.innerHTML ="m";
+      }
+    }
+</script>
 </html>                                              

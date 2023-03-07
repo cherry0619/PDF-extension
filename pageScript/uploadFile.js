@@ -1,6 +1,6 @@
 
 const sessionId = Math.random().toString(36).substr(2);
-sessionStorage.setItem("sessionId",sessionId);
+sessionStorage.setItem("session_id",sessionId);
 
 class FileUploader{
     constructor(element,recievingUrl,requestMethod,pdfPreviewId){
@@ -78,6 +78,7 @@ class FileUploader{
 function fileupload(event,fileInputId,requestMethod,requestUrl,pdfReviewerId,uploadedFilesLists){
   const fileInput =document.getElementById(fileInputId);
   const formData = new FormData();
+  sessionStorage.setItem('fileName',fileInput.files[0].name)
   formData.append("file",fileInput.files[0]);
   formData.append('session_id',sessionId);
   fetch(requestUrl,
@@ -112,12 +113,38 @@ function fileupload(event,fileInputId,requestMethod,requestUrl,pdfReviewerId,upl
 
 
 
+function fileExtract(event,fileInputId,requestMethod,requestUrl,pdfReviewerId){
+  const fileInput =document.getElementById(fileInputId);
+  const formData = new FormData();
+  sessionStorage.setItem('file_name',fileInput.files[0].name)
+  formData.append("file",fileInput.files[0]);
+  formData.append('session_id',sessionStorage.getItem("session_id"));
+  
+  console.log("session id is ",sessionStorage.getItem("session_id"));
+  console.log("file name is ",sessionStorage.getItem("file_name"));
+
+  fetch(requestUrl,
+    {method:requestMethod,
+    body:formData})
+  .then(response =>{
+    if (!response.ok) {throw new Error("Network response was not ok");}
+  return response.json();
+  })
+  .then(data => {
+    // console.log("starting the preview !!");
+    const previewElement = document.getElementById(pdfReviewerId);
+    previewElement.src = data.urls[0]+"#zoom=100%";
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+}
+
 
 const dropBox = document.getElementById("dropBox");
 const requestUrlCon ="http://localhost:4040/upload";
 const requestMethodCon ="POST";
 
-// const uploader = new FileUploader(dropBox, "http://localhost:4040/upload", "POST","pdf-preview");
 const uploader = new FileUploader(dropBox, requestUrlCon, requestMethodCon,"pdf-preview");
 
 const clickUp = document.getElementById("sumbit-file");
@@ -125,4 +152,9 @@ clickUp.addEventListener("click",function(event){fileupload(event,"fileInput",re
 
 
 const formSubmit = document.getElementById("extractFileSubmit");
-formSubmit.addEventListener("click",function(event){fileupload(event,"extractorFileInput",requestMethodCon,requestUrlCon,"extractorPdfPreview","")});
+formSubmit.addEventListener("click",
+                            function(event){fileExtract(event,
+                                                        "extractorFileInput",
+                                                        requestMethodCon,
+                                                        requestUrlCon,
+                                                        "extractorPdfPreview")});
